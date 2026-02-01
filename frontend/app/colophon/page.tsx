@@ -1,6 +1,7 @@
 import { PageHeader } from "@/components/layout/page-header";
 import { Section } from "@/components/layout/section";
 import { mockPageMeta } from "@/lib/mock/data";
+import { getLastUpdated } from "@/lib/utils/get-last-updated";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -9,6 +10,8 @@ export const metadata: Metadata = {
 };
 
 export default function ColophonPage() {
+  const lastUpdated = getLastUpdated();
+
   return (
     <div className="page-grid">
       <PageHeader />
@@ -102,6 +105,10 @@ export default function ColophonPage() {
           </a>
           <span className="text-muted-foreground"> — Open source</span>
         </p>
+      </Section>
+
+      <Section label="Last Updated">
+        <p>{lastUpdated}</p>
       </Section>
     </div>
   );
