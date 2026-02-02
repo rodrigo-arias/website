@@ -36,6 +36,7 @@ export function StackGrid({ items }: StackGridProps) {
             {/* Icon */}
             <div className="flex-shrink-0 size-10 flex items-center justify-center bg-border rounded">
               {item.iconSlug ? (
+                // eslint-disable-next-line @next/next/no-img-element -- external SVG from simpleicons.org
                 <img
                   src={`https://cdn.simpleicons.org/${item.iconSlug}/ffffff`}
                   alt=""
@@ -47,6 +48,7 @@ export function StackGrid({ items }: StackGridProps) {
                 />
               ) : null}
               {item.iconImage && !item.iconSlug ? (
+                // eslint-disable-next-line @next/next/no-img-element -- external image URL
                 <img src={item.iconImage} alt="" className="size-5" />
               ) : null}
               <span

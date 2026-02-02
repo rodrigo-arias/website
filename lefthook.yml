@@ -1,3 +1,13 @@
+pre-commit:
+  parallel: true
+  commands:
+    typecheck:
+      root: frontend/
+      run: npm run typecheck
+    lint:
+      root: frontend/
+      run: npm run lint
+
 commit-msg:
   commands:
     commitlint:

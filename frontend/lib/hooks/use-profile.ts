@@ -12,6 +12,7 @@ interface ProfileResponse {
     tagline: string;
     about: string;
     skills: Array<{ name: string; icon: string; color: string }>;
+    interests: string[];
     social_links: Array<{ platform: string; url: string }>;
   };
 }
@@ -23,6 +24,7 @@ function transformProfileResponse(data: ProfileResponse): Profile {
     tagline: globalSet.tagline,
     about: globalSet.about,
     skills: globalSet.skills,
+    interests: globalSet.interests,
     socialLinks: globalSet.social_links.map((link) => ({
       platform: link.platform as Profile["socialLinks"][number]["platform"],
       url: link.url,

@@ -2,19 +2,15 @@
 
 import { useTheme } from "next-themes";
 import { Sun, Moon, Info, Home } from "lucide-react";
-import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { useMounted } from "@/lib/hooks/use-mounted";
 
 export function Toolbar() {
   const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
+  const mounted = useMounted();
   const pathname = usePathname();
   const isColophon = pathname === "/colophon";
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   if (!mounted) {
     return null;

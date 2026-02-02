@@ -12,6 +12,7 @@ export function Skills({ skills }: SkillsProps) {
       </h2>
       <div className="flex flex-wrap gap-2">
         {skills.map((skill) => (
+          // eslint-disable-next-line @next/next/no-img-element -- external SVG from shields.io
           <img
             key={skill.name}
             src={`https://img.shields.io/badge/${encodeURIComponent(skill.name)}-${skill.color}?style=flat&logo=${skill.icon}&logoColor=white`}

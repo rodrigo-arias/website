@@ -71,7 +71,7 @@ I believe in crafting clean, performant, and user-friendly web experiences—cod
   socialLinks: [
     { platform: "github", url: "https://github.com/rodrigo-arias" },
     { platform: "linkedin", url: "https://linkedin.com/in/rodrigo-arias" },
-    { platform: "bluesky", url: "https://bsky.app/profile/rodrigo-arias" },
+    { platform: "bluesky", url: "https://rodrigo.blue/" },
     { platform: "email", url: "mailto:hello@arias.me" },
   ],
 };

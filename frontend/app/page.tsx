@@ -25,6 +25,7 @@ export default function HomePage() {
       <Section label="Skills">
         <div className="flex flex-wrap gap-1">
           {profile.skills.map((skill) => (
+            // eslint-disable-next-line @next/next/no-img-element -- external SVG from shields.io
             <img
               key={skill.name}
               src={`https://img.shields.io/badge/${encodeURIComponent(skill.name)}-%232e2e2e?style=for-the-badge&logo=${skill.icon}&logoColor=white`}
