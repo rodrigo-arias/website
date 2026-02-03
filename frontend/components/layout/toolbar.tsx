@@ -12,18 +12,16 @@ export function Toolbar() {
   const pathname = usePathname();
   const isColophon = pathname === "/colophon";
 
-  if (!mounted) {
-    return null;
-  }
-
   return (
-    <div className="fixed bottom-4 left-1/2 -translate-x-1/2 flex gap-1 md:top-1/2 md:bottom-auto md:left-4 md:flex-col md:translate-x-0 md:-translate-y-1/2 z-40">
+    <div className="fixed bottom-2 left-1/2 -translate-x-1/2 flex gap-1 md:top-1/2 md:bottom-auto md:left-4 md:flex-col md:translate-x-0 md:-translate-y-1/2 z-40">
       <button
         onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
         className="size-8 flex items-center justify-center bg-border text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
         aria-label="Toggle theme"
       >
-        {theme === "dark" ? (
+        {!mounted ? (
+          <Moon className="size-4" />
+        ) : theme === "dark" ? (
           <Sun className="size-4" />
         ) : (
           <Moon className="size-4" />
