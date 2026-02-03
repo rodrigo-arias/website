@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 export default function StackPage() {
-  const items = mockStackItems;
+  const items = [...mockStackItems].sort((a, b) => a.title.localeCompare(b.title));
 
   return (
     <div className="page-grid">

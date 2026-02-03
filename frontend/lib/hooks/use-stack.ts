@@ -36,11 +36,15 @@ export function useStack() {
     queryKey: ["stack"],
     queryFn: async () => {
       // Use mock data for now - replace with API call when backend is ready
+      let items: StackItem[];
       if (process.env.NEXT_PUBLIC_USE_MOCK_DATA === "true") {
-        return mockStackItems;
+        items = mockStackItems;
+      } else {
+        const data = await graphqlClient.request<StackResponse>(GET_STACK);
+        items = transformStackResponse(data);
       }
-      const data = await graphqlClient.request<StackResponse>(GET_STACK);
-      return transformStackResponse(data);
+      // Sort alphabetically by title
+      return [...items].sort((a, b) => a.title.localeCompare(b.title));
     },
     staleTime: Infinity,
   });
