@@ -22,6 +22,19 @@ export const metadata: Metadata = {
   },
   description: mockSiteSettings.description,
   metadataBase: new URL(mockSiteSettings.url),
+  openGraph: {
+    title: mockSiteSettings.title,
+    description: mockSiteSettings.description,
+    url: mockSiteSettings.url,
+    siteName: mockSiteSettings.title,
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: mockSiteSettings.title,
+    description: mockSiteSettings.description,
+  },
 };
 
 export default function RootLayout({

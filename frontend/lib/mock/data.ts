@@ -13,14 +13,14 @@ const yearsOfExperience = Math.floor(
 
 export const mockSiteSettings: SiteSettings = {
   title: "Rodrigo Arias",
-  description: "Web developer specializing in WordPress and Next.js, building websites for the American legal and professional industry.",
+  description: "Web developer specializing in WordPress and Next.js, building fast and maintainable web experiences.",
   url: "https://arias.me",
 };
 
 export const mockPageMeta: Record<string, PageMeta> = {
   home: {
     title: "Rodrigo Arias",
-    description: "Web developer specializing in WordPress and Next.js, building websites for the American legal and professional industry.",
+    description: "Web developer specializing in WordPress and Next.js, building fast and maintainable web experiences.",
   },
   stack: {
     title: "Stack",
