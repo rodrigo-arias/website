@@ -1,6 +1,8 @@
-# arias.me
+# Arias ME
 
 Personal website built with Statamic (CMS) and Next.js (frontend).
+
+![Preview](./frontend/preview.png)
 
 ## Structure
 
