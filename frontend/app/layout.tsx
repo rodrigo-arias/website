@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/next"
 import { Providers } from "./providers";
 import { GridLines } from "@/components/layout/grid-lines";
 import { Toolbar } from "@/components/layout/toolbar";
@@ -51,6 +53,8 @@ export default function RootLayout({
             </div>
           </div>
         </Providers>
+        <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
