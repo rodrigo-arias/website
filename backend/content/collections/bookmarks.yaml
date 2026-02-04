@@ -1,0 +1,5 @@
+title: Bookmarks
+template: bookmarks/show
+layout: layout
+sort_dir: asc
+orderable: true

@@ -1,0 +1,95 @@
+name: 'Rodrigo Arias'
+tagline: 'Web Developer with 9+ yrs experience.'
+about: "Specialized in WordPress and Next.js. Currently building websites for the American legal and professional industry.\n\nOver the recent years, my primary focus has been on Headless WordPress, and I've been actively engaged with the growing community driven by WPGraphQL.\n\nI believe in crafting clean, performant, and user-friendly web experiences\u2014code that\u2019s not just functional, but maintainable and elegant."
+skills:
+  -
+    type: skill
+    name: Next.js
+    icon: nextdotjs
+    color: '000000'
+  -
+    type: skill
+    name: React
+    icon: react
+    color: 61DAFB
+  -
+    type: skill
+    name: TypeScript
+    icon: typescript
+    color: 3178C6
+  -
+    type: skill
+    name: TailwindCSS
+    icon: tailwindcss
+    color: 06B6D4
+  -
+    type: skill
+    name: GraphQL
+    icon: graphql
+    color: E10098
+  -
+    type: skill
+    name: Node.js
+    icon: nodedotjs
+    color: '339933'
+  -
+    type: skill
+    name: WordPress
+    icon: wordpress
+    color: 21759B
+  -
+    type: skill
+    name: PHP
+    icon: php
+    color: 777BB4
+  -
+    type: skill
+    name: MySQL
+    icon: mysql
+    color: 4479A1
+  -
+    type: skill
+    name: AWS
+    icon: amazonwebservices
+    color: FF9900
+  -
+    type: skill
+    name: Vercel
+    icon: vercel
+    color: '000000'
+  -
+    type: skill
+    name: GitHub Actions
+    icon: githubactions
+    color: 2088FF
+  -
+    type: skill
+    name: Jest
+    icon: jest
+    color: C21325
+interests:
+  - Tech
+  - Finance
+  - Coffee
+  - Books
+  - Music
+  - AOE2
+  - Formula 1
+  - Football
+social_links:
+  -
+    type: link
+    platform: github
+    url: 'https://github.com/rodrigo-arias'
+  -
+    type: link
+    platform: linkedin
+    url: 'https://linkedin.com/in/rodrigo-arias'
+  -
+    type: link
+    platform: bluesky
+    url: 'https://rodrigo.blue/'
+  -
+    type: link
+    platform: email
+    url: 'mailto:hello@arias.me'

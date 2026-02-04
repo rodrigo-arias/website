@@ -1,0 +1,31 @@
+title: Bookmarks
+fields:
+  -
+    handle: title
+    field:
+      type: text
+      display: Title
+      validate: required
+  -
+    handle: link_url
+    field:
+      type: text
+      display: URL
+      input_type: url
+      validate: required
+  -
+    handle: description
+    field:
+      type: textarea
+      display: Description
+      character_limit: 150
+  -
+    handle: category
+    field:
+      type: select
+      display: Category
+      options:
+        learning: 'Learning Resources'
+        articles: Articles
+        tools: Tools
+        inspiration: Inspiration

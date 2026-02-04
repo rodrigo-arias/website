@@ -1,0 +1,78 @@
+title: Profile
+fields:
+  -
+    handle: name
+    field:
+      type: text
+      display: Name
+      validate: required
+  -
+    handle: tagline
+    field:
+      type: text
+      display: Tagline
+      instructions: 'Brief intro (1-2 sentences)'
+  -
+    handle: about
+    field:
+      type: textarea
+      display: About
+      instructions: '2-3 paragraphs about yourself'
+  -
+    handle: skills
+    field:
+      type: replicator
+      display: Skills
+      sets:
+        skill:
+          display: Skill
+          fields:
+            -
+              handle: name
+              field:
+                type: text
+                display: 'Skill Name'
+                validate: required
+            -
+              handle: icon
+              field:
+                type: text
+                display: 'Icon Slug'
+                instructions: 'Simple Icons slug (e.g., react, typescript). Browse at [simpleicons.org](https://simpleicons.org)'
+            -
+              handle: color
+              field:
+                type: text
+                display: 'Badge Color'
+                instructions: 'Hex color without # (e.g., 61DAFB for React)'
+  -
+    handle: interests
+    field:
+      type: taggable
+      display: Interests
+      instructions: 'Personal interests'
+  -
+    handle: social_links
+    field:
+      type: replicator
+      display: 'Social Links'
+      sets:
+        link:
+          display: 'Social Link'
+          fields:
+            -
+              handle: platform
+              field:
+                type: select
+                display: Platform
+                options:
+                  github: GitHub
+                  linkedin: LinkedIn
+                  bluesky: Bluesky
+                  email: Email
+            -
+              handle: url
+              field:
+                type: text
+                display: URL
+                validate: required

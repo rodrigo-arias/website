@@ -1,0 +1,19 @@
+title: Site
+fields:
+  -
+    handle: site_title
+    field:
+      type: text
+      display: 'Site Title'
+      validate: required
+  -
+    handle: site_description
+    field:
+      type: textarea
+      display: 'Site Description'
+  -
+    handle: site_url
+    field:
+      type: text
+      display: 'Site URL'
+      input_type: url

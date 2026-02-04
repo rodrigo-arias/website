@@ -1,0 +1,6 @@
+nav:
+  content:
+    'content::navigation': '@hide'
+    'content::taxonomies': '@hide'
+  tools:
+    'tools::forms': '@hide'

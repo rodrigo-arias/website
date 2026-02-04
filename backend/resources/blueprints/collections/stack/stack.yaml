@@ -1,0 +1,49 @@
+title: Stack
+fields:
+  -
+    handle: title
+    field:
+      type: text
+      display: Name
+      validate: required
+  -
+    handle: description
+    field:
+      type: textarea
+      display: Description
+      character_limit: 200
+  -
+    handle: categories
+    field:
+      type: checkboxes
+      display: Categories
+      listable: true
+      instructions: 'Select all that apply'
+      options:
+        essentials: Essentials
+        hardware: Hardware
+        software: Software
+        development: Development
+        productivity: Productivity
+        archived: Archived
+  -
+    handle: icon_slug
+    field:
+      type: text
+      display: 'Icon Slug'
+      instructions: 'Simple Icons slug (e.g., visualstudiocode, figma). Browse at [simpleicons.org](https://simpleicons.org)'
+  -
+    handle: icon_image
+    field:
+      type: assets
+      display: 'Custom Icon'
+      instructions: 'Upload if not available in Simple Icons'
+      max_files: 1
+      container: assets
+  -
+    handle: link_url
+    field:
+      type: text
+      display: URL
+      input_type: url
+      validate: required
