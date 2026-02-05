@@ -1,16 +1,20 @@
 import { CategoryFilter } from "@/components/stack/category-filter";
 import { StackGrid } from "@/components/stack/stack-grid";
-import { mockStackItems, mockPageMeta } from "@/lib/mock/data";
+import { getStackItems } from "@/lib/graphql/fetchers";
 import { PageHeader } from "@/components/layout/page-header";
+import { mockPageMeta } from "@/lib/mock/data";
 import type { Metadata } from "next";
+
+export const revalidate = 86400;
 
 export const metadata: Metadata = {
   title: mockPageMeta.stack.title,
   description: mockPageMeta.stack.description,
 };
 
-export default function StackPage() {
-  const items = [...mockStackItems].sort((a, b) => a.title.localeCompare(b.title));
+export default async function StackPage() {
+  const stackItems = await getStackItems();
+  const items = [...stackItems].sort((a, b) => a.title.localeCompare(b.title));
 
   return (
     <div className="page-grid">

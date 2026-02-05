@@ -1,47 +1,77 @@
-import { gql } from "graphql-request";
-
-export const GET_PROFILE = gql`
+export const GET_PROFILE = /* GraphQL */ `
   query GetProfile {
     globalSet(handle: "profile") {
       ... on GlobalSet_Profile {
         name
         tagline
         about
-        skills
-        social_links
-      }
-    }
-  }
-`;
-
-export const GET_STACK = gql`
-  query GetStack {
-    entries(collection: "stack") {
-      data {
-        title
-        ... on Entry_Stack_Stack {
-          description
-          categories
-          icon_slug
-          icon_image {
+        interests
+        skills {
+          ... on Set_Skills_Skill {
+            name
+            icon
+            color
+          }
+        }
+        social_links {
+          ... on Set_SocialLinks_Link {
+            platform {
+              value
+            }
             url
           }
-          url
         }
       }
     }
   }
 `;
 
-export const GET_BOOKMARKS = gql`
-  query GetBookmarks {
-    entries(collection: "bookmarks") {
+export const GET_SITE_SETTINGS = /* GraphQL */ `
+  query GetSiteSettings {
+    globalSet(handle: "site_settings") {
+      ... on GlobalSet_SiteSettings {
+        title
+        description
+        url
+      }
+    }
+  }
+`;
+
+export const GET_STACK = /* GraphQL */ `
+  query GetStack {
+    entries(collection: "stack") {
       data {
+        id
+        title
+        ... on Entry_Stack_Stack {
+          description
+          categories {
+            value
+          }
+          icon_slug
+          icon_image {
+            url
+          }
+          link_url
+        }
+      }
+    }
+  }
+`;
+
+export const GET_BOOKMARKS = /* GraphQL */ `
+  query GetBookmarks {
+    entries(collection: "bookmarks", sort: "order") {
+      data {
+        id
         title
         ... on Entry_Bookmarks_Bookmarks {
-          url
+          link_url
           description
-          category
+          category {
+            value
+          }
         }
       }
     }

@@ -1,9 +1,11 @@
-import { mockProfile } from "@/lib/mock/data";
+import { getProfile } from "@/lib/graphql/fetchers";
 import { PageHeader } from "@/components/layout/page-header";
 import { Section } from "@/components/layout/section";
 
-export default function HomePage() {
-  const profile = mockProfile;
+export const revalidate = 86400;
+
+export default async function HomePage() {
+  const profile = await getProfile();
 
   return (
     <div className="page-grid">

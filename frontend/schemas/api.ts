@@ -16,6 +16,7 @@ export const profileSchema = z.object({
   tagline: z.string(),
   about: z.string(),
   skills: z.array(skillSchema),
+  interests: z.array(z.string()),
   socialLinks: z.array(socialLinkSchema),
 });
 
@@ -25,6 +26,8 @@ export const stackCategorySchema = z.enum([
   "development",
   "design",
   "productivity",
+  "essentials",
+  "archived",
 ]);
 
 export const stackItemSchema = z.object({

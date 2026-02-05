@@ -1,8 +1,8 @@
 import { GithubIcon, LinkedinIcon, MailIcon } from "lucide-react";
-import { mockProfile } from "@/lib/mock/data";
+import { getProfile } from "@/lib/graphql/fetchers";
 
-export function Footer() {
-  const profile = mockProfile;
+export async function Footer() {
+  const profile = await getProfile();
 
   const IconComponent: Record<string, React.ReactNode> = {
     github: <GithubIcon className="size-4" />,
