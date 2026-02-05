@@ -556,8 +556,8 @@ export const mockBookmarks: Bookmark[] = [
   },
   {
     id: "21",
-    title: "Social Share Preview",
-    url: "https://socialsharepreview.com/",
+    title: "OpenGraph.xyz",
+    url: "https://www.opengraph.xyz/",
     category: "tools",
   },
   {
