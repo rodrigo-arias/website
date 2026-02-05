@@ -24,6 +24,7 @@ fields:
     field:
       type: select
       display: Category
+      listable: true
       options:
         learning: 'Learning Resources'
         articles: Articles
