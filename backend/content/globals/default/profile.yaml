@@ -1,72 +1,103 @@
 name: 'Rodrigo Arias'
 tagline: 'Web Developer with 9+ yrs experience.'
-about: "Specialized in WordPress and Next.js. Currently building websites for the American legal and professional industry.\n\nOver the recent years, my primary focus has been on Headless WordPress, and I've been actively engaged with the growing community driven by WPGraphQL.\n\nI believe in crafting clean, performant, and user-friendly web experiences\u2014code that\u2019s not just functional, but maintainable and elegant."
+about: |-
+  Specialized in WordPress and Next.js. Currently building websites for the American legal and professional industry.
+
+  Over the recent years, my primary focus has been on Headless WordPress, and I've been actively engaged with the growing community driven by WPGraphQL.
+
+  I believe in crafting clean, performant, and user-friendly web experiences—code that’s not just functional, but maintainable and elegant.
 skills:
   -
+    id: hwOZkayK
     type: skill
     name: Next.js
     icon: nextdotjs
     color: '000000'
+    enabled: true
   -
+    id: NF7cOpRW
     type: skill
     name: React
     icon: react
     color: 61DAFB
+    enabled: true
   -
+    id: YdcTZsEo
     type: skill
     name: TypeScript
     icon: typescript
     color: 3178C6
+    enabled: true
   -
+    id: pEelumgH
     type: skill
     name: TailwindCSS
     icon: tailwindcss
     color: 06B6D4
+    enabled: true
   -
+    id: uLO4RDLq
     type: skill
     name: GraphQL
     icon: graphql
     color: E10098
+    enabled: true
   -
+    id: 8De5W2TH
     type: skill
     name: Node.js
     icon: nodedotjs
     color: '339933'
+    enabled: true
   -
+    id: Bdu9WUPd
     type: skill
     name: WordPress
     icon: wordpress
     color: 21759B
+    enabled: true
   -
+    id: WP5YZQzK
     type: skill
     name: PHP
     icon: php
     color: 777BB4
+    enabled: true
   -
+    id: jaEdPXDg
     type: skill
     name: MySQL
     icon: mysql
     color: 4479A1
+    enabled: true
   -
+    id: W31Md81g
     type: skill
     name: AWS
     icon: amazonwebservices
     color: FF9900
+    enabled: true
   -
+    id: YmWpQ873
     type: skill
     name: Vercel
     icon: vercel
     color: '000000'
+    enabled: true
   -
+    id: DsUAStJN
     type: skill
-    name: GitHub Actions
+    name: 'GitHub Actions'
     icon: githubactions
     color: 2088FF
+    enabled: true
   -
+    id: NcCz993f
     type: skill
     name: Jest
     icon: jest
     color: C21325
+    enabled: true
 interests:
   - Tech
   - Finance
@@ -74,22 +105,30 @@ interests:
   - Books
   - Music
   - AOE2
-  - Formula 1
+  - 'Formula 1'
   - Football
 social_links:
   -
+    id: t8a3KFWU
     type: link
     platform: github
     url: 'https://github.com/rodrigo-arias'
+    enabled: true
   -
+    id: TnOZ0J2D
     type: link
     platform: linkedin
     url: 'https://linkedin.com/in/rodrigo-arias'
+    enabled: true
   -
+    id: CnDs52hH
     type: link
     platform: bluesky
     url: 'https://rodrigo.blue/'
+    enabled: true
   -
+    id: TLIRYuPH
     type: link
     platform: email
     url: 'mailto:hello@arias.me'
+    enabled: true

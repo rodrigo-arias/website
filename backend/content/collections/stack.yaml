@@ -2,4 +2,3 @@ title: Stack
 template: stack/show
 layout: layout
 sort_dir: asc
-orderable: true
