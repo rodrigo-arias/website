@@ -39,7 +39,7 @@ export default async function Image() {
         {/* Title */}
         <div
           style={{
-            fontSize: 24,
+            fontSize: 36,
             fontWeight: 400,
             color: "#999999",
             letterSpacing: "0.15em",

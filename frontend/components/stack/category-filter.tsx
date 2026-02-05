@@ -14,7 +14,7 @@ export function CategoryFilter() {
       <button
         onClick={clearFilters}
         className={cn(
-          "bg-border px-[13px] py-[10px] text-small uppercase transition-colors cursor-pointer",
+          "bg-border px-2.5 py-1.5 md:px-[13px] md:py-[10px] text-small uppercase transition-colors cursor-pointer",
           selectedCategories.length === 0
             ? "text-foreground"
             : "text-muted-foreground hover:text-foreground"
@@ -29,7 +29,7 @@ export function CategoryFilter() {
             key={category}
             onClick={() => toggleCategory(category)}
             className={cn(
-              "bg-border px-[13px] py-[10px] text-small uppercase transition-colors cursor-pointer",
+              "bg-border px-2.5 py-1.5 md:px-[13px] md:py-[10px] text-small uppercase transition-colors cursor-pointer",
               isSelected
                 ? "text-foreground"
                 : "text-muted-foreground hover:text-foreground"
