@@ -19,8 +19,8 @@ class RevalidateSubscriber
 
     public function handle(): void
     {
-        $url = env('REVALIDATE_WEBHOOK_URL');
-        $secret = env('REVALIDATE_WEBHOOK_SECRET');
+        $url = config('revalidation.webhook_url');
+        $secret = config('revalidation.webhook_secret');
 
         if (! $url || ! $secret) {
             return;
