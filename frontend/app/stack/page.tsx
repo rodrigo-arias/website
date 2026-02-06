@@ -2,14 +2,13 @@ import { CategoryFilter } from "@/components/stack/category-filter";
 import { StackGrid } from "@/components/stack/stack-grid";
 import { getStackItems } from "@/lib/graphql/fetchers";
 import { PageHeader } from "@/components/layout/page-header";
-import { mockPageMeta } from "@/lib/mock/data";
 import type { Metadata } from "next";
 
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: mockPageMeta.stack.title,
-  description: mockPageMeta.stack.description,
+  title: "Stack",
+  description: "Apps, tools, and gear I use daily.",
 };
 
 export default async function StackPage() {

@@ -1,7 +1,6 @@
 import { getBookmarks } from "@/lib/graphql/fetchers";
 import { PageHeader } from "@/components/layout/page-header";
 import { Section } from "@/components/layout/section";
-import { mockPageMeta } from "@/lib/mock/data";
 import {
   BOOKMARK_CATEGORY_LABELS,
   type BookmarkCategory,
@@ -11,8 +10,8 @@ import type { Metadata } from "next";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: mockPageMeta.bookmarks.title,
-  description: mockPageMeta.bookmarks.description,
+  title: "Bookmarks",
+  description: "Curated collection of useful resources and tools.",
 };
 
 export default async function BookmarksPage() {

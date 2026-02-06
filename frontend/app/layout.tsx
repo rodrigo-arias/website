@@ -7,7 +7,6 @@ import { Providers } from "./providers";
 import { GridLines } from "@/components/layout/grid-lines";
 import { Toolbar } from "@/components/layout/toolbar";
 import { Footer } from "@/components/layout/footer";
-import { mockSiteSettings } from "@/lib/mock/data";
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -15,25 +14,29 @@ const geistMono = Geist_Mono({
   weight: ["300", "400", "500"],
 });
 
+const SITE_TITLE = "Rodrigo Arias";
+const SITE_DESCRIPTION = "Front-end developer focused on building high-quality, user-focused web experiences.";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://arias.me";
+
 export const metadata: Metadata = {
   title: {
-    default: mockSiteSettings.title,
-    template: `%s | ${mockSiteSettings.title}`,
+    default: SITE_TITLE,
+    template: `%s | ${SITE_TITLE}`,
   },
-  description: mockSiteSettings.description,
-  metadataBase: new URL(mockSiteSettings.url),
+  description: SITE_DESCRIPTION,
+  metadataBase: new URL(SITE_URL),
   openGraph: {
-    title: mockSiteSettings.title,
-    description: mockSiteSettings.description,
-    url: mockSiteSettings.url,
-    siteName: mockSiteSettings.title,
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    url: SITE_URL,
+    siteName: SITE_TITLE,
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: mockSiteSettings.title,
-    description: mockSiteSettings.description,
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
   },
 };
 

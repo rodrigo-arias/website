@@ -1,12 +1,11 @@
 import { PageHeader } from "@/components/layout/page-header";
 import { Section } from "@/components/layout/section";
-import { mockPageMeta } from "@/lib/mock/data";
 import { getLastUpdated } from "@/lib/utils/get-last-updated";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: mockPageMeta.colophon.title,
-  description: mockPageMeta.colophon.description,
+  title: "Colophon",
+  description: "About this site and how it was built.",
 };
 
 export default function ColophonPage() {
