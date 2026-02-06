@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 
 const SITE_TITLE = "Rodrigo Arias";
 const SITE_DESCRIPTION = "Web developer building fast and maintainable web applications.";
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://arias.me";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL!;
 
 export const metadata: Metadata = {
   title: {
