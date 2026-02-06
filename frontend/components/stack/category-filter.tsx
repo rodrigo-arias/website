@@ -2,7 +2,7 @@
 
 import { useFilterStore } from "@/lib/stores/filter-store";
 import { STACK_CATEGORY_LABELS, type StackCategory } from "@/lib/graphql/types";
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils/cn";
 
 const categories = Object.keys(STACK_CATEGORY_LABELS) as StackCategory[];
 

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils/cn";
 import { ThemeToggle } from "./theme-toggle";
 import { Layers, Bookmark, Home, Menu, X } from "lucide-react";
 import { useState } from "react";
