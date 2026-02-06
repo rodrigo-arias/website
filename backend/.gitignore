@@ -24,3 +24,7 @@
 Homestead.json
 Homestead.yaml
 Thumbs.db
+
+# Content lives on server only (not in git after initial deploy)
+/content/
+/users/
