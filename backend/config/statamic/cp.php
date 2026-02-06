@@ -53,7 +53,11 @@ return [
     */
 
     'widgets' => [
-        //
+        [
+            'type' => 'collection',
+            'collection' => 'stack',
+            'limit' => 5,
+        ],
     ],
 
     /*
