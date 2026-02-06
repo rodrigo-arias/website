@@ -28,11 +28,11 @@ export const GET_PROFILE = /* GraphQL */ `
 
 export const GET_SITE_SETTINGS = /* GraphQL */ `
   query GetSiteSettings {
-    globalSet(handle: "site_settings") {
-      ... on GlobalSet_SiteSettings {
-        title
-        description
-        url
+    globalSet(handle: "site") {
+      ... on GlobalSet_Site {
+        site_title
+        site_description
+        site_url
       }
     }
   }

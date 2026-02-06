@@ -7,74 +7,25 @@ import {
   GET_BOOKMARKS,
 } from "./queries";
 import type { Profile, SiteSettings, StackItem, Bookmark } from "./types";
-
-// -- Statamic response types (snake_case / LabeledValue) --
-
-interface StatamicSkill {
-  name: string;
-  icon: string;
-  color: string;
-}
-
-interface StatamicSocialLink {
-  platform: { value: string };
-  url: string;
-}
-
-interface StatamicProfileResponse {
-  globalSet: {
-    name: string;
-    tagline: string;
-    about: string;
-    interests: string[];
-    skills: StatamicSkill[];
-    social_links: StatamicSocialLink[];
-  };
-}
-
-interface StatamicSiteSettingsResponse {
-  globalSet: {
-    title: string;
-    description: string;
-    url: string;
-  };
-}
-
-interface StatamicStackEntry {
-  id: string;
-  title: string;
-  description: string;
-  categories: { value: string }[];
-  icon_slug: string | null;
-  icon_image: { url: string }[] | null;
-  link_url: string;
-}
-
-interface StatamicStackResponse {
-  entries: {
-    data: StatamicStackEntry[];
-  };
-}
-
-interface StatamicBookmarkEntry {
-  id: string;
-  title: string;
-  link_url: string;
-  description: string | null;
-  category: { value: string };
-}
-
-interface StatamicBookmarkResponse {
-  entries: {
-    data: StatamicBookmarkEntry[];
-  };
-}
+import type {
+  GetProfileQuery,
+  GetSiteSettingsQuery,
+  GetStackQuery,
+  GetBookmarksQuery,
+} from "./generated/graphql";
 
 // -- Fetchers --
 
 export const getProfile = cache(async (): Promise<Profile> => {
-  const data = await graphqlFetch<StatamicProfileResponse>(GET_PROFILE);
-  const gs = data.globalSet;
+  const data = await graphqlFetch<GetProfileQuery>(GET_PROFILE);
+  const gs = data.globalSet as NonNullable<GetProfileQuery["globalSet"]> & {
+    name: string;
+    tagline: string;
+    about: string;
+    interests: string[];
+    skills: Array<{ name: string; icon: string; color: string }>;
+    social_links: Array<{ platform: { value: string }; url: string }>;
+  };
 
   return {
     name: gs.name,
@@ -94,39 +45,58 @@ export const getProfile = cache(async (): Promise<Profile> => {
 });
 
 export async function getSiteSettings(): Promise<SiteSettings> {
-  const data =
-    await graphqlFetch<StatamicSiteSettingsResponse>(GET_SITE_SETTINGS);
-  const gs = data.globalSet;
+  const data = await graphqlFetch<GetSiteSettingsQuery>(GET_SITE_SETTINGS);
+  const gs = data.globalSet as { site_title: string; site_description: string; site_url: string };
 
   return {
-    title: gs.title,
-    description: gs.description,
-    url: gs.url,
+    title: gs.site_title,
+    description: gs.site_description,
+    url: gs.site_url,
   };
 }
 
 export async function getStackItems(): Promise<StackItem[]> {
-  const data = await graphqlFetch<StatamicStackResponse>(GET_STACK);
+  const data = await graphqlFetch<GetStackQuery>(GET_STACK);
 
-  return data.entries.data.map((entry) => ({
-    id: entry.id,
-    title: entry.title,
-    description: entry.description,
-    categories: entry.categories.map((c) => c.value) as StackItem["categories"],
-    iconSlug: entry.icon_slug ?? undefined,
-    iconImage: entry.icon_image?.[0]?.url ?? undefined,
-    url: entry.link_url,
-  }));
+  return (data.entries?.data ?? []).map((entry) => {
+    const e = entry as {
+      id: string;
+      title: string;
+      description: string;
+      categories: Array<{ value: string }>;
+      icon_slug: string | null;
+      icon_image: { url: string } | null;
+      link_url: string;
+    };
+    return {
+      id: e.id,
+      title: e.title,
+      description: e.description,
+      categories: e.categories.map((c) => c.value) as StackItem["categories"],
+      iconSlug: e.icon_slug ?? undefined,
+      iconImage: e.icon_image?.url ?? undefined,
+      url: e.link_url,
+    };
+  });
 }
 
 export async function getBookmarks(): Promise<Bookmark[]> {
-  const data = await graphqlFetch<StatamicBookmarkResponse>(GET_BOOKMARKS);
+  const data = await graphqlFetch<GetBookmarksQuery>(GET_BOOKMARKS);
 
-  return data.entries.data.map((entry) => ({
-    id: entry.id,
-    title: entry.title,
-    url: entry.link_url,
-    description: entry.description ?? undefined,
-    category: entry.category.value as Bookmark["category"],
-  }));
+  return (data.entries?.data ?? []).map((entry) => {
+    const e = entry as {
+      id: string;
+      title: string;
+      link_url: string;
+      description: string | null;
+      category: { value: string };
+    };
+    return {
+      id: e.id,
+      title: e.title,
+      url: e.link_url,
+      description: e.description ?? undefined,
+      category: e.category.value as Bookmark["category"],
+    };
+  });
 }
