@@ -2,6 +2,4 @@
 
 use Illuminate\Support\Facades\Route;
 
-// Route::statamic('example', 'example-view', [
-//    'title' => 'Example'
-// ]);
+Route::redirect('/', config('app.frontend_url'));
