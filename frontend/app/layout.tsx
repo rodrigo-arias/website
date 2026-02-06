@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 const SITE_TITLE = "Rodrigo Arias";
-const SITE_DESCRIPTION = "Front-end developer focused on building high-quality, user-focused web experiences.";
+const SITE_DESCRIPTION = "Web developer building fast and maintainable web applications.";
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://arias.me";
 
 export const metadata: Metadata = {
