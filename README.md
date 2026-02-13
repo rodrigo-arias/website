@@ -1,4 +1,4 @@
-# Arias ME
+# Rodrigo.Dev
 
 Personal website built with Statamic (CMS) and Next.js (frontend).
 
