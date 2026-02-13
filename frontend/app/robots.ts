@@ -1,13 +1,14 @@
 import type { MetadataRoute } from "next";
+import { getSiteSettings } from "@/lib/graphql/fetchers";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL!;
+export default async function robots(): Promise<MetadataRoute.Robots> {
+  const site = await getSiteSettings();
 
-export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: `${SITE_URL}/sitemap.xml`,
+    sitemap: `${site.url}/sitemap.xml`,
   };
 }

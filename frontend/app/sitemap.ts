@@ -1,29 +1,30 @@
 import type { MetadataRoute } from "next";
+import { getSiteSettings } from "@/lib/graphql/fetchers";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL!;
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const site = await getSiteSettings();
 
-export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: SITE_URL,
+      url: site.url,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 1,
     },
     {
-      url: `${SITE_URL}/stack`,
+      url: `${site.url}/stack`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: `${SITE_URL}/bookmarks`,
+      url: `${site.url}/bookmarks`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: `${SITE_URL}/colophon`,
+      url: `${site.url}/colophon`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.5,

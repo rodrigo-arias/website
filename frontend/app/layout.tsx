@@ -7,6 +7,7 @@ import { Providers } from "./providers";
 import { GridLines } from "@/components/layout/grid-lines";
 import { Toolbar } from "@/components/layout/toolbar";
 import { Footer } from "@/components/layout/footer";
+import { getSiteSettings } from "@/lib/graphql/fetchers";
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -14,31 +15,31 @@ const geistMono = Geist_Mono({
   weight: ["300", "400", "500"],
 });
 
-const SITE_TITLE = "Rodrigo Arias";
-const SITE_DESCRIPTION = "Web developer building fast and maintainable web applications.";
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL!;
+export async function generateMetadata(): Promise<Metadata> {
+  const site = await getSiteSettings();
 
-export const metadata: Metadata = {
-  title: {
-    default: SITE_TITLE,
-    template: `%s | ${SITE_TITLE}`,
-  },
-  description: SITE_DESCRIPTION,
-  metadataBase: new URL(SITE_URL),
-  openGraph: {
-    title: SITE_TITLE,
-    description: SITE_DESCRIPTION,
-    url: SITE_URL,
-    siteName: SITE_TITLE,
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: SITE_TITLE,
-    description: SITE_DESCRIPTION,
-  },
-};
+  return {
+    title: {
+      default: site.title,
+      template: `%s | ${site.title}`,
+    },
+    description: site.description,
+    metadataBase: new URL(site.url),
+    openGraph: {
+      title: site.title,
+      description: site.description,
+      url: site.url,
+      siteName: site.title,
+      locale: "en_US",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: site.title,
+      description: site.description,
+    },
+  };
+}
 
 export default function RootLayout({
   children,

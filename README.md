@@ -40,8 +40,6 @@ cp frontend/.env.example frontend/.env.local
 cp backend/.env.example backend/.env
 ```
 
-Set `NEXT_PUBLIC_USE_MOCK_DATA=false` in frontend to use real API data.
-
 ## Tech Stack
 
 - **CMS:** Statamic 6, GraphQL API
