@@ -6,6 +6,9 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Colophon",
   description: "About this site and how it was built.",
+  alternates: {
+    canonical: "/colophon",
+  },
 };
 
 export default function ColophonPage() {

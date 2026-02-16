@@ -9,6 +9,9 @@ export const revalidate = 86400;
 export const metadata: Metadata = {
   title: "Stack",
   description: "Apps, tools, and gear I use daily.",
+  alternates: {
+    canonical: "/stack",
+  },
 };
 
 export default async function StackPage() {

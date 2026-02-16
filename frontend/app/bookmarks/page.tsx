@@ -12,6 +12,9 @@ export const revalidate = 86400;
 export const metadata: Metadata = {
   title: "Bookmarks",
   description: "Curated collection of useful resources and tools.",
+  alternates: {
+    canonical: "/bookmarks",
+  },
 };
 
 export default async function BookmarksPage() {
